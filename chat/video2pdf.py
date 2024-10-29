@@ -128,7 +128,10 @@ so I can use it as a basis for a comic book panel created from the video. The fr
     timestamp = mmss_to_seconds(panel['timestamp'])
     description = panel['panel_dialogue']
     frames = get_frame_at_timestamp(video_path, timestamp+offset)
-    req = get_request(f"Here is one of the frames you need to analyze. For some context, this is the dialogue that is attached to the picture: {description}. This is frame number ", frames)
+    try:
+      req = get_request(f"Here is one of the frames you need to analyze. For some context, this is the dialogue that is attached to the picture: {description}. This is frame number ", frames)
+    except:
+      continue
     frame_id = int(identify_keyframe(client, prompt_keyframe, req))
     frame = frames[frame_id]
     final_frames.append((frame[...,::-1], description))
@@ -196,7 +199,7 @@ def draw_text_bubble(model_yolo, frame, img, desc):
       text_box[0] -= (right_overflow + 50)
       text_box[2] -= (right_overflow + 50)
 
-    top_overflow = 0 - text_box[3]
+    top_overflow = 0 - text_box[1]
     if top_overflow > 0:
       text_box[1] += top_overflow*1.2
       text_box[3] += top_overflow*1.2
