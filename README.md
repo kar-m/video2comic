@@ -48,7 +48,7 @@ reflex run
 ```
 
 ### Additional
-You may have to view the pdf's with Adobe Acrobat, there is a vscode extension for this.
+You may have to view the pdf's with Adobe Acrobat, there is a [vscode extension](https://marketplace.visualstudio.com/items?itemName=tomoki1207.pdf) for this.
 
 You must insert your OpenAI, Gemini, and [Cartoon API](https://api.market/store/ailabtools/ai-cartoon-generator) keys in the upper left corner
 
