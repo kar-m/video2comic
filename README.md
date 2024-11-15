@@ -4,7 +4,9 @@ Video2Comic is a web application developed by BruinAI that converts video files 
 
 ### Demo:
 Here's a demo we made while working on the project
+
 [Watch the video](https://drive.google.com/file/d/1kBjLuAuurJ63JmXYwCftzyK9vX6E7OzE/view)
+
 [See the result](https://drive.google.com/file/d/1CLGmZygs2hAdrcpGy48DW7d2F7gfKG_r/view)
 
 
