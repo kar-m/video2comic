@@ -5,8 +5,8 @@ from chat.video2pdf import get_pdf, get_PIL_from_pdf
 
 
 class State(rx.State):
-    
-    output_path: str = 'comic_output.pdf'
+
+    output_path: str
     video_path: str
     OPENAI_API: str
     GEMINI_API: str
@@ -15,16 +15,14 @@ class State(rx.State):
 
     def update_openai(self, new_api):
         self.OPENAI_API = new_api
+
     def update_gemini(self, new_api):
         self.GEMINI_API = new_api
+
     def update_style(self, new_api):
         self.STYLE_API = new_api
 
-
-
-    async def handle_upload(
-        self, files: list[rx.UploadFile]
-        ):
+    async def handle_upload(self, files: list[rx.UploadFile]):
         """Handle the upload of file(s).
 
         Args:
@@ -37,13 +35,24 @@ class State(rx.State):
             print("uploaded file")
             print(outfile)
 
-            self.video_path = outfile
+            self.video_path = str(outfile)
 
             # Save the file.
             with outfile.open("wb") as file_object:
                 file_object.write(upload_data)
 
-    def get_pdf_(self, ):    
-        get_pdf(self.video_path, self.OPENAI_API, self.GEMINI_API, self.STYLE_API, self.output_path)
+    def get_pdf_(
+        self,
+    ):
+        self.output_path = (
+            f"comic_output_{self.video_path.split('/')[-1].split('.')[0]}.pdf"
+        )
+        get_pdf(
+            self.video_path,
+            self.OPENAI_API,
+            self.GEMINI_API,
+            self.STYLE_API,
+            self.output_path,
+        )
         self.pdf_images = get_PIL_from_pdf(self.output_path)
         os.remove(self.video_path)
