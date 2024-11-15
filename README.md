@@ -1,10 +1,12 @@
-# Reflex Chat App
+# video2comic
 
-A user-friendly, highly customizable Python web app designed to demonstrate LLMs in a ChatGPT format.
+Video2Comic is a web application developed by BruinAI that converts video files into comic-style visuals using AI by taking key frames from the video, translating audio into text and then using style transfer and character positioning to create comics.
 
-<div align="center">
-<img src="./docs/demo.gif" alt="icon"/>
-</div>
+### Demo:
+Here's a demo we made while working on the project
+[Watch the video](https://drive.google.com/file/d/1kBjLuAuurJ63JmXYwCftzyK9vX6E7OzE/view)
+[See the result](https://drive.google.com/file/d/1CLGmZygs2hAdrcpGy48DW7d2F7gfKG_r/view)
+
 
 # Getting Started
 
@@ -43,22 +45,11 @@ reflex init
 reflex run
 ```
 
-# Features
+### Additional
+You may have to view the pdf's with Adobe Acrobat, there is a vscode extension for this.
 
-- 100% Python-based, including the UI, using Reflex
-- Create and delete chat sessions
-- The application is fully customizable and no knowledge of web dev is required to use it.
-    - See https://reflex.dev/docs/styling/overview for more details 
-- Easily swap out any LLM
-- Responsive design for various devices
+You must insert your OpenAI, Gemini, and [Cartoon API](https://api.market/store/ailabtools/ai-cartoon-generator) keys in the upper left corner
 
-# Contributing
 
-We welcome contributions to improve and extend the LLM Web UI. 
-If you'd like to contribute, please do the following:
-- Fork the repository and make your changes. 
-- Once you're ready, submit a pull request for review.
 
-# License
 
-The following repo is licensed under the MIT License.
